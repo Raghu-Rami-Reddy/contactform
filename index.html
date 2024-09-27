@@ -9,11 +9,33 @@
 <body>
     <div class="container">       
         <h1>Stay Updated on Wellness Tips and Offers!</h1>
-        <form class="form-group" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="face0294-1c3d-4807-8e25-dd06721fd163">
-            <input type="email" name="email" required placeholder="test@email.com">
+        <form class="form-group" id="form">
+            <input type="email" name="Email" required placeholder="test@email.com">
             <button>Get Started</button>
         </form>
     </div>
 </body>
 </html>
+
+<script>
+   const form = document.querySelector("#form")
+   const submitButton = document.querySelector("#submit")
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbwLahxTKFzc7rvDJQUW1aU-Sxkx6_Fl3iB1Q7EnGtbYJ4IcYKXaPaJHynv1YYcdf61o/exec'
+
+   form.addEventListener('submit', e => {
+     submitButton.disabled = true
+     e.preventDefault()
+     let requestBody = new FormData(form)
+     fetch(scriptURL, { method: 'POST', body: requestBody})
+       .then(response => {
+          alert('Success!', response)
+          submitButton.disabled = false
+         })
+       .catch(error => {
+       alert('Error!', error.message)
+         submitButton.disabled = false
+
+       }
+       )
+   })
+</script>

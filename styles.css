@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #2b0b3b;
+    color: #f8c4ff;
+    width: 100vw;
+    padding: 25px;
+}
+
+.container h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+}
+
+.form-group input[type="email"] {
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    width: 70%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+.form-group button {
+    width: 30%;
+    padding: 15px 30px;
+    border: none;
+    background-color: #ffd7ef;
+    color: #d70081;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.form-group button:hover {
+    background-color: #fff;
+}
+
+/* Responsive Styles */
+@media (min-width: 769px) {
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .form-group {
+        width: 70%;
+    }
+
+    .form-group input[type="email"] {
+        border-radius: 25px;
+        margin-bottom: 15px;
+    }
+
+    .form-group button {
+        border-radius: 25px;
+
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .form-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .form-group input[type="email"] {
+        border-radius: 25px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .form-group button {
+        border-radius: 25px;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        overflow: hidden;
+
+    }
+    
+    .container h1 {
+        font-size: 24px;
+    }
+
+    .form-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .form-group input[type="email"] {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .form-group button {
+        font-size: 14px;
+        padding: 5px;
+        width: 100px;
+        height: 40px;
+    }
+}
